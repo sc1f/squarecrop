@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Squarecropper</title>
+    <meta name="description" content="Crop images for Spotify playlists">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div class="container container__body">
+      <div class="columns columns__header">
+        <div class="col-12">
+              <h3 class="header">Squarecropper</h3>
+              <p class="about">Spotify playlists love square images. Crop them—the lazy way.</p>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="col-3 padding">
+          
+        </div>
+        <div class="col-6 flex flex-dir-column align-center-middle">
+          <div class="image">
+            <img id="image" src=""/>
+            <div id="image-placeholder" class="image-placeholder flex align-center-middle">
+              <h1>?</h1>
+            </div>
+          </div>
+          <form id="upload-photo-form" enctype="multipart/form-data" method="post" action="/new-photo" class="flex">
+            <input type="file" id="upload-photo" name="photo" accept="image/*"/>
+            <label for="upload-photo">.jpg only please</label>
+            <input type="hidden" id="photo-dimensions" name="dimensions"/>
+            <button class="btn btn-primary" id="submit-btn" action="submit">Upload!</button>
+          </form>
+        </div>
+        <div class="col-3 padding">
+          
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="columns columns__footer">
+        <div class="col-12 flex align-center-middle">
+              <p class="about">made by <a href="https://juntan.me" target="_blank">jun tan</a>, 2018</p>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

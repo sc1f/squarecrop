@@ -1,0 +1,91 @@
+body {
+  font-family: Helvetica, "Roboto Mono", monospace;
+}
+
+/* helpers */
+
+.flex {
+  display: flex;
+}
+
+.flex-dir-column {
+  flex-direction: column;
+}
+
+.align-center-middle {
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+/* header */
+
+div.columns.columns__header {
+  padding: 3em 3em 0 3em;
+}
+
+h3.header {
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+p.about {
+  text-align: center;
+}
+
+i.icon {
+  margin-right: 1rem;
+}
+
+
+/* body */
+
+div.container__body {
+  margin-bottom: 8em;
+}
+
+div.columns.columns__body {
+    
+}
+
+.image {
+  margin-bottom: 2em;
+}
+
+#image {
+  height: auto;
+  width: 100%;
+}
+.image-placeholder {
+  border: 1px solid lightgray;
+  color: gray;
+  font-weight: bold;
+  height: 20em;
+  width: 20em;
+}
+
+/* form */
+
+label {
+  font-style: italic;
+  font-size: .7rem;
+}
+
+#upload-photo-form {
+  align-content: center;
+  flex-direction: column;
+}
+
+#submit-btn {
+  background: #49CC91;
+  border-color: #49CC91;
+  display: none;
+  margin-top: 1em;
+  transition: all 0.6s;
+}
+
+#submit-btn:hover {
+  background: #30A361;
+} 
