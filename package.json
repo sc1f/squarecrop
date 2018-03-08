@@ -1,0 +1,29 @@
+{
+  "name": "aws-sdk",
+  "version": "0.0.1",
+  "description": "AWS SDK sample app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "aws-sdk": ">= 2.0.9",
+    "node-uuid": ">= 1.4.1",
+    "multer-s3": "^2.7.0",
+    "multer": "^1.3.0",
+    "sharp": "^0.20.0",
+    "smartcrop": "^2.0.1",
+    "smartcrop-sharp": "^2.0.0",
+    "request": "^2.83.0"
+  },
+  "engines": {
+    "node": "6.10.x"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "aws",
+    "express"
+  ]
+}
