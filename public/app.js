@@ -40,26 +40,6 @@ var file_upload_handler = {
         button.css("display", "block")
       }
     });
-    this.submitForm();
-  },
-  submitForm: function() {
-    var form = this.form;
-    form.submit = function(e) {
-      alert(e);
-      e.preventDefault();
-      var url = "/new-photo";
-      $.ajax({
-           type: "POST",
-           url: url,
-           data: form.serialize(), // serializes the form's elements.
-           success: function(data)
-           {
-               alert(data); // show response from the php script.
-           }
-         });
-
-       // avoid to execute the actual submit of the form.
-    }
   }
 }
 

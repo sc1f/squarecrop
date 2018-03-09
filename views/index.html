@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Squarecropper</title>
-    <meta name="description" content="Crop images for Spotify playlists">
+    <title>squarecropper</title>
+    <meta name="description" content="crop pictures for spotify playlist cover art so they look good...for the culture">
     <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +17,9 @@
     <div class="container container__body">
       <div class="columns columns__header">
         <div class="col-12">
-              <h3 class="header">Squarecropper</h3>
-              <p class="about">Spotify playlists love square images. Crop them—the lazy way.</p>
+              <h1 class="header">squarecropper</h1>
+              <p class="about">crop pictures for spotify playlist cover art so they look good...for the culture</p>
+              <p class="about" style="font-weight:bold">if you get access denied, refresh the image page and it'll show up</p>
         </div>
       </div>
       <div class="columns">
@@ -28,9 +29,6 @@
         <div class="col-6 flex flex-dir-column align-center-middle">
           <div class="image">
             <img id="image" src=""/>
-            <div id="image-placeholder" class="image-placeholder flex align-center-middle">
-              <h1>?</h1>
-            </div>
           </div>
           <form id="upload-photo-form" enctype="multipart/form-data" method="post" action="/new-photo" class="flex">
             <input type="file" id="upload-photo" name="photo" accept="image/*"/>
@@ -46,8 +44,18 @@
     </div>
     <div class="container">
       <div class="columns columns__footer">
-        <div class="col-12 flex align-center-middle">
-              <p class="about">made by <a href="https://juntan.me" target="_blank">jun tan</a>, 2018</p>
+        <div class="col-12 flex align-center-middle flex-dir-column">
+              <div style="display: block; margin-bottom: 2em; padding: 2em">
+                <h5>technical stuff</h5>
+                <ul>
+                  <li><a href="https://github.com/jwagner/smartcrop.js/" target="_blank">smartcrop</a> means we get the best part of the image within the crop area. sweet!</li>
+                  <li>running on <a href="https://glitch.com/edit/#!/squarecropper" target="_blank">glitch</a> which is a damn cool platform</li>
+                  <li>does it work on mobile? who knows?!?!</li>
+                  <li><a href="https://github.com/sc1f/squarecrop" target="_blank">github</a> link</li>
+                  <li>it's 2:30am and i'm hungry</li>
+                  <li>hacked together without tests by <a href="https://juntan.me" target="_blank">jun tan</a>, march 2018</li>
+                </ul>
+              </div>
         </div>
       </div>
     </div>

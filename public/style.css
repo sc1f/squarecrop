@@ -1,5 +1,5 @@
 body {
-  font-family: Helvetica, "Roboto Mono", monospace;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 /* helpers */
@@ -24,7 +24,7 @@ div.columns.columns__header {
   padding: 3em 3em 0 3em;
 }
 
-h3.header {
+h1.header {
   color: #000;
   font-weight: bold;
   text-align: center;
@@ -43,7 +43,7 @@ i.icon {
 /* body */
 
 div.container__body {
-  margin-bottom: 8em;
+  margin-bottom: 5em;
 }
 
 div.columns.columns__body {
@@ -64,6 +64,10 @@ div.columns.columns__body {
   font-weight: bold;
   height: 20em;
   width: 20em;
+}
+
+#progress {
+  display: none;
 }
 
 /* form */
