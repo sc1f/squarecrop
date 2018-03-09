@@ -43,25 +43,28 @@ var bucket_name = process.env.BUCKET_NAME,
     resized_bucket_name = process.env.RESIZED_BUCKET_NAME;
 
 // multer upload
+var re = /(?:\.([^.]+))?$/;
+
 var upload = multer({
     storage: multerS3({
       s3: s3,
+      acl: "public-read",
       bucket: bucket_name,
       key: function (req, file, cb) {
-        cb(null, uuidv4() + "-" + file.originalname)
+        cb(null, uuidv4() + "." + re.exec(file.originalname)[1])
       }
     })
   })
 
 var uploadImageBuffer = function(data, key) {
     var params = { Bucket: resized_bucket_name, Key: key, Body: data, ACL:'public-read'};
-    s3.putObject(params, function(err, data) {
+    s3.upload(params, function(err, data) {
       if (err)
         console.error(err)
       else {
-        var url = "https://" + resized_bucket_name + ".s3.amazonaws.com/" + key;
-        console.log("Successfully uploaded data to " + url);
-        return url;
+        console.log(data)
+        console.log("Successfully uploaded data to " + data.Location);
+        return data.Location;
       }
     });
 }
@@ -96,8 +99,11 @@ app.post("/new-photo", upload.single('photo'), function(request, response) {
     var shortest_edge = Number(request.body.dimensions),
         resized_key = "resized-" + request.file.key;
     console.log("smart cropping image at " + request.file.key);
-    var image_key = smartCropper(request.file.location, resized_key, shortest_edge, shortest_edge);
-    response.redirect("https://s3.amazonaws.com/" + resized_bucket_name + "/resized-" + request.file.key);
+    smartCropper(request.file.location, resized_key, shortest_edge, shortest_edge);
+    var url = "https://" + resized_bucket_name + ".s3.amazonaws.com/" + "resized-" + request.file.key;
+    console.log(url)
+    // let AWS catch up
+    setTimeout(function() { response.redirect(url); }, 3000);
   } catch(err) {
     console.error(err);
     response.redirect("/");
